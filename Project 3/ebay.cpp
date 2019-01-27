@@ -1,10 +1,6 @@
-//Project 3
-//---------------
 //Adam Cole
-//004912373
-//Discussion 1E
-//---------------
-//ebay.cpp
+
+//Project 3
 
 //includes
 #include <iostream>
