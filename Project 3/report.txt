@@ -1,0 +1,27 @@
+Adam Cole
+
+Project 3 report
+
+a.	Some obstacles I overcame while making Project 3 were making my bids function that extracted the numbers from the string
+    and returned the amount of the list and bid pricing.  I wrote the project in bulk and not incrementally, so each of the 
+    errors I had took me considerable amounts of time to fix and debug.  The function that validated the string actually took 
+    me the least amount of time, and the listingSold and howMuch functions took me the longest.
+    
+b.	To validate the string, I looped through the string and for each character in the string had switch statements evaluating 
+    what the character was, testing for characters not used in the spec sheet and what to do when it was a ‘W’ or a ‘B’.  For 
+    listingSold and howMuch I also looped through the string and at each character where there was an ‘L’ or a ‘B’ I extracted 
+    the number from the index after the character, and for ‘B+’ I used the index twice after the number.  In order to do this, 
+    I wrote a method that looped through the string from the beginning index of the number until the character was no longer a 
+    number, leaving me with the two indexes of the bid numbers in the string.  From there, I looped through adding the numbers 
+    in the string to an integer, and output them into my listingSold and howMuch functions.
+    
+c.	Test Data:
+    a.	String with spaces, because its in the spec sheet
+    b.	String with decimal, because its in the spec sheet
+    c.	String with a unwatch before a watch, because its in the spec sheet
+    d.	String with a bid interruption, because its in the spec sheet
+    e.	String with a listprice not first or duplicate, because its in the spec sheet
+    f.	String with opening bid more than once, because its in the spec sheet
+    g.	String with a negative bid price, because always test negatives
+    h.	String with other characters not in the spec sheet, because their presence can have an unexpected return.
+    i.	Inputting nothing at all, because having string length 0 can crash your program.
