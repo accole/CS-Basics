@@ -1,2 +1,29 @@
-*All credit should be given to Howard Stahl, UCLA, for this assignment*
+Adam Cole
 
+	For project 1, our assignment was to take an original pet survey program and create separate files for the varying types of errors 
+  programmers can experience while coding.  A runtime error is an error that the programmer can make that outputs the wrong result, but 
+  the program can still run fluidly.  For my logic error, I switched the preferCats and preferDogs integers when the percentages are 
+  calculated so that the percentage of people whom prefer dogs and cats are incorrect.  A compiler error is an error in the code where 
+  the program fails to compile or build.  For my compiler error, I removed the semicolon from the initialization of int preferCats;, 
+  so that the statement is never finished and the file cannot compile, build, or run.
+  
+	While running the original file (original.cpp), I tested a variety of input cases.  The first case, the number of people who prefer 
+  cats (4) and dogs (6) totaled to the total number of participants (10), and the correct percentages were displayed and totaled 100% 
+  (40% cat 60% dog).  The second case I tested, the total number of participants (10) was less than the sum of participants who preferred 
+  cats (5) and dogs (3).  The percentages were correctly displayed even though they did not total 100% (50% cat and 30% dog).  The third 
+  case I tested, the number of participants (10) was less than the total sum of people whom preferred cats (6) and dogs (8).  The 
+  percentages also displayed correctly (80% dogs 60% cats) despite the illogical numbers tested.  The fourth case tested inputted the 
+  number of participants as zero, with the number of people preferring cats (6) and dogs (6) as logical numbers.  The program output 
+  inf% for both cats and dogs, therefore being the first case where the program fails.  And lastly, I tested the original program with 
+  a negative number of participants (-10), and positive numbers of people preferring cats (3) and dogs (7).  The program output the 
+  correct percentages, only negative (-70% dogs -30% cats).
+  
+	While running the file with the runtime error (logic_error.cpp), all of the cases as above returned the same outputs, except the 
+  percentages outputted were incorrect and flipped, where the correct percentage for dogs was displayed for cats and vice versa.  The 
+  final message reporting whether there were more dog people than cat people still remains correct, however.  An example would be the 
+  first tested case for the original file.  The number of participants was 10, and the reported number of people preferring cats was 4 
+  and preferring dogs 6.  The output displays cats at 60% and dogs at 40%, instead of the other way around.  The output still correctly 
+  reported there were more dogs than cats.
+  
+	While trying to run the file with the compiler error (compile_error.cpp), the program would fail to build or run because of the 
+  compiler error - a missing semicolon.
