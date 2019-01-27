@@ -1,10 +1,6 @@
 //Project 4
-//-------------
+
 //Adam Cole
-//004912373
-//Discussion 1E
-//--------------
-//array.cpp
 
 //includes
 #include <iostream>
