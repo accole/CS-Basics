@@ -1,0 +1,29 @@
+Adam Cole
+
+Project 2 Report
+  
+TESTS
+
+Base Cases
+
+-	Test all the combinations of gender, age, height, and weight to ensure every outcome comes out correctly; we test these 
+  because the assignment specifically tells us to write a program having these outputs.
+-	Test an empty donor name, incorrect gender names, negative age, height, and weight; we test these cases because the assignment 
+  specifically tells us to catch these errors.
+  
+Test Boundaries
+
+- Test donors 15, 16, 17, 21, 22, and 23 years old and 5’ tall of each gender above 110 pounds in order to test the age boundary
+  inequality in your code to make sure you didn’t make a mistake.
+- Test 25-year-old donors weighing 109, 110, and 111 pounds to test the weight boundary inequality in your code to make sure you 
+  didn’t make a mistake.
+-	For Women, test heights 4’9”, 4’10”, 4’11”, and 5’ with age between 16 and 22 years old and above 110 pounds to test the 
+  height inequalities in your code to make sure you didn’t make a mistake.
+-	For every gender besides Female, test donors between 16 and 22 years old above 110 pounds with heights 4’11”, 5’, and 5’1” 
+  to test the height inequalities in your code to make sure you didn’t make a mistake.
+  
+Irregular Cases
+
+- Input a double for an integer – example, 185.5 pounds for weight or 9.5 years, etc.; we must test this to make sure that if the
+  user makes an error and enters 5.0 for age instead of 5, the program will still run and output that the user must input a 
+  correct age. (***my program originally failed this test***)
