@@ -1,0 +1,83 @@
+Adam Cole
+Project 2 HW
+
+--------------------------------------------------------------------------
+
+endlendl
+endline
+
+--------------------------------------------------------------------------
+
+len = 5
+_ _ _ _ #
+_ _ _ #
+_ _ #
+_ #
+#
+The program takes a number from the user and creates a slanted line of # signs with a length equal 
+to the number inputted from the user.
+
+--------------------------------------------------------------------------
+
+1.	    #include <iostream>
+2.		using namespace std;
+3.	
+4.		int main()
+5.		{
+6.		    int len;
+7.	        int j;
+8.		    cout << "Enter a number: ";
+9.		    cin >> len;
+10.	
+11.		    for (int i = 0; i < len; i++){
+12.		    	    j = i + 1;
+13.			    While (j < len)
+14.			    {
+15.			        cout << " ";
+16.	                       j++;
+17.			    }
+18.			    cout << "#" << endl;
+19.		    }
+20.		}
+
+--------------------------------------------------------------------------
+
+0.     #include <iostream>
+1.		using namespace std;
+2.	
+3.		int main()
+4.		{
+5.		    int len;
+6.	         int j;
+7.		    cout << "Enter a number: ";
+8.		    cin >> len;
+9.	         int i = 0
+10.		 do
+11.		    {
+12.	              j = i + 1;
+13.			While (j < len) {
+14.			      	        cout << " ";
+15.	                       j++;
+16.			 }
+17.			 cout << "#" << endl;
+18.	               i++;
+19.		    } while (i < len);
+20.		}
+
+--------------------------------------------------------------------------
+
+Switch (weekday): {
+	case 1:
+		cout << “rainy days and mondays get me down”;
+		break;
+	case 2:
+		cout << “ruby tuesday”;
+		break;
+	case 6:
+	case 7:
+		cout << “wonderful weekend”;
+		break;
+	default:
+		cout << “regular day”;
+		break;
+}
