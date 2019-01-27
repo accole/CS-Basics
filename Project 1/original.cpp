@@ -1,8 +1,6 @@
 // Project 1
-// original.cpp
+
 //Adam Cole
-//UCLAID: 004912373
-//Discussion 1E
 
 #include <iostream>
 using namespace std;   // pp. 37-38 in Savitch book explain this line
