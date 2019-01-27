@@ -1,6 +1,5 @@
 //Adam Cole
-//UCLA ID: 004912373
-//Discussion 1E
+
 //Project 2
 
 //inlcude statements
