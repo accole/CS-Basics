@@ -1,0 +1,20 @@
+Adam Cole
+
+Project 4 report
+
+
+Test Cases
+
+a.	Test negative n values for every function because the spec sheet specifies a case for negative n values.
+b.	Test the findMinimum() function to make sure it returns an index because those were the instructions.
+c.	Test all the punctuation for the countAllPunctuation() function because the spec sheet says to.
+d.	Test numbers with no leading number before the decimal, decimals with letters, strings with two decimals, 
+     and strings with no decimals for the countFloatingPointValues() function because the function has to work 
+     with all of those strings.
+e.	Test multiple duplicates, including duplicates with indexes next to each other for the removeDuplicatedValues() 
+     function because the indexes might not compile correctly.
+f.	Test replaceAll() and check every index to ensure the function replaced all characters to double check the 
+     indexes of the loops.
+g.	For shiftRight(), test the function with a case where amount > n and where n > amount inputted.  Similarly, 
+     test the function where n < the size of the actual array, and check the elements to make sure none are changed 
+     after the first n terms, because it could have unforeseen undefined behavior in the program.
