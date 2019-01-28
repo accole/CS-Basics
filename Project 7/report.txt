@@ -2,7 +2,7 @@ Adam Cole
 
 Project 7 report
 
-1.	One of the notable obstacles I overcame while coding project 7 was understanding the use of ‘this’ in the NumberSet functions.  
+1.  One of the notable obstacles I overcame while coding project 7 was understanding the use of ‘this’ in the NumberSet functions.  
     I understand now that when referencing the calling object, we must refer to it as a pointer through the word ‘this’.  Furthermore, 
     when coding an accessor function, you can use the ‘this’ pointer, but that is redundant and it can be easier said by simply 
     returning the private data directly.  Another obstacle I overcame was I had an error in the evaluate function in the board.cpp 
