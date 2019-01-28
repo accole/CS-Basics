@@ -1,0 +1,21 @@
+Adam Cole
+
+Project 5 Report
+
+a)	One notable obstacle I had to overcome was understanding how to reference variables and methods constructed in header files 
+    in the implementation.  For example, the method AppleProduct buyiPhone8(Kind kind, string version, string color, int gigabyte); 
+    constructed in the header file would need the prefix references in front of buyiPhone8() and in front of Kind.  Creating a namespace
+    and understand the scope for all the different #includes at different levels of hierarchy also was rather confusing.  I realized that 
+    to create a namespace, and have a class be a part of a namespace, the construction of the class must be inside the declaration of a 
+    namespace.  Furthermore, even if you include the header file in your implementation, you must still reference the namespace unless 
+    you declare using namespace cs31 at the beginning of the .cpp file.
+
+b)	Test Data:
+
+    a.	Constructing an AppleProduct and an AppleStore with no parameters – because the default initialization of these must be specific.
+    b.	Creating each AppleProduct possible using an AppleStore and making sure it compiles correctly – because multiple 
+        AppleProducts are different
+    c.	Running each of the member functions for every AppleProduct – because each AppleProduct has different private data
+    d.	Try creating apple products with incorrect gigabyte values – because if AppleProducts are compiled with the wrong amount 
+        of gigabytes a logic error should be thrown.
+    e.	Run all the test data given in the main method Professor Stahl provides for us – because he gives us test data.
