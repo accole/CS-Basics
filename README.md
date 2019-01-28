@@ -1,6 +1,10 @@
 # CS31
 # UCLA CS 31 Winter 2018 - Howard Stahl
 
+Adam Cole
+
+--------------------------------------
+
 Project 1   -     Logic & Compiler Errors
 
 Project 2   -     Control Flow
