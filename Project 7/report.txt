@@ -1,0 +1,25 @@
+Adam Cole
+
+Project 7 report
+
+1.	One of the notable obstacles I overcame while coding project 7 was understanding the use of ‘this’ in the NumberSet functions.  
+    I understand now that when referencing the calling object, we must refer to it as a pointer through the word ‘this’.  Furthermore, 
+    when coding an accessor function, you can use the ‘this’ pointer, but that is redundant and it can be easier said by simply 
+    returning the private data directly.  Another obstacle I overcame was I had an error in the evaluate function in the board.cpp 
+    when I tried to access the value of a specific cell in mCells.  When I called getValue(), I forgot the empty parenthesis at the 
+    end, causing my code to not build correctly.
+
+
+2.	Test Data:
+
+    a.	Test the notFound() function by using <cassert> and testing inputs, because that was one of the functions we had to implement.
+    b.	Test to see if the setImmutable() function is working correctly by using the isImmutable() function because those were 
+        also parts of the program us cs31 students had to code.
+    c.	Run tests on the evaluate function by playing the game and making sure the number outputted is the number of filled in 
+        cells on the playing board
+    d.	Test the program by trying to set values to letters or multiple numbers instead of just one number, because the coder 
+        may not anticipate user error.  This outputted an infinite loop in my program!
+    e.	Test trying to input values into rows and columns that do not exist, because these could be out – of – bounds errors.
+    f.	Test setting a cell to a number larger than 9 or smaller than 1 to see if the game allows you to break the rules of the 
+        game or crash your program.
+    g.	Try setting a number over an immutable number, because immutable cells should not be able to be changed.
