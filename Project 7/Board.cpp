@@ -3,8 +3,9 @@
 //  SudokuGame
 //
 //  Created by Howard Stahl on 11/5/17.
-//  Copyright © 2017 Howard Stahl. All rights reserved.
+//  Copyright Â© 2017 Howard Stahl. All rights reserved.
 //
+
 #include <iostream>
 #include "Board.h"
 
