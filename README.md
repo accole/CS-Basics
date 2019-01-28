@@ -1,4 +1,5 @@
 # CS31
+# UCLA CS 31 Winter 2018 - Howard Stahl
 
 Project 1   -     Logic & Compiler Errors
 
