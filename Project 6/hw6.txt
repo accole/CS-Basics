@@ -4,27 +4,27 @@ PROJECT 6
 
 
 1.a.	
-  int main()
-  {
-  	int arr[4] = { 0, 1, 2, 3 };
-  	int* ptr = arr;
-  	*ptr = arr[1];               		// set arr[0] to 1
-  	*(ptr + 1) = arr[0] * 10;   	 	// set arr[1] to 10
-   	ptr += 2;
-	  ptr[0] = arr[1] * 10;        		// set arr[2] to 100
-  	ptr[1] = 1000;                 	// set arr[3] to 1000
-					                          // At this point, ptr points to arr[2], not arr[3]
-	  ptr++;				                  // This increments the arrow to the last index of arr
-	    while (ptr >= arr)
-  	  {
-  		  cout << " " << *ptr;    	  // print values		
-	  	  ptr--; 			                // In this code, ptr is decremented first, then
-                                    //	displayed.  Must be opposite
-		    cout << " " << *ptr;    	  // print values
-	    }
-	  cout << endl;
-	  return(0);
-  }
+  	int main()
+  	{
+  		int arr[4] = { 0, 1, 2, 3 };
+  		int* ptr = arr;
+  		*ptr = arr[1];               		// set arr[0] to 1
+  		*(ptr + 1) = arr[0] * 10;   	 	// set arr[1] to 10
+  	 	ptr += 2;
+		ptr[0] = arr[1] * 10;        		// set arr[2] to 100
+	  	ptr[1] = 1000;                 		// set arr[3] to 1000
+				                        // At this point, ptr points to arr[2], not arr[3]
+		ptr++;	  	                        // This increments the arrow to the last index of arr
+		while (ptr >= arr)
+	  	{
+	  		cout << " " << *ptr;    	// print values		
+		  	ptr--; 				// In this code, ptr is decremented first, then
+	                                    		//  displayed.  Must be opposite
+			cout << " " << *ptr;    	// prints values
+		}
+		cout << endl;
+		return(0);
+	  }
   
 ptr was pointing to the wrong index of arr[], therefore the  output was only the first two values 
 in the array and then undefined values.  This is due to a combination of ptr not pointing to the 
@@ -34,33 +34,33 @@ ptr--; and to increment ptr below ptr[1] = 1000.
 
 
 b.	
-  void findLastZero(int arr[], int n, int*& p) {  
-                                                  // Must pass pointer by reference as a parameter
-                                                  // if you want to edit the arrow of a pointer and not just the value    	
-	p = nullptr;    		                            // default value if there isn't a 0 in the array at all
-	  for (int k = n - 1; k >= 0; k--) {
-		  if (arr[k] == 0) {                           // found an element whose value is 0
-		  	p = arr + k;                               // change the value of p
-		  	break;                                     // stop looping and return
-		  }		
-  	}
-  }
+  	void findLastZero(int arr[], int n, int*& p) {  
+                                                  		// Must pass pointer by reference as a parameter
+                                                  		// if you want to edit the arrow of a pointer and not just the value    	
+		p = nullptr;    		                 // default value if there isn't a 0 in the array at all
+		  for (int k = n - 1; k >= 0; k--) {
+			  if (arr[k] == 0) {                     // found an element whose value is 0
+			  	p = arr + k;                     // change the value of p
+			  	break;                           // stop looping and return
+			  }		
+  		}
+ 	 }
 
-  int main() {
-	  int nums[6] = { 10, 20, 0, 40, 30, 50 };
-	  int* ptr;
-	  findLastZero(nums, 6, ptr);
-
-	  if (ptr == nullptr) {
-	  	cout << "The array doesn't have any zeros inside it." << endl;
+  	int main() {
+		  int nums[6] = { 10, 20, 0, 40, 30, 50 };
+		  int* ptr;
+		  findLastZero(nums, 6, ptr);
+	
+		  if (ptr == nullptr) {
+		  	cout << "The array doesn't have any zeros inside it." << endl;
+		  }
+		  else {
+		  	cout << "The last zero is at address " << ptr << endl;
+			cout << "It's at index " << ptr - nums << endl;
+			cout << "The item's value is " << *ptr << " which is zero!" << endl;
+		  }
+		  return(0);
 	  }
-	  else {
-	  	cout << "The last zero is at address " << ptr << endl;
-		  cout << "It's at index " << ptr - nums << endl;
-		  cout << "The item's value is " << *ptr << " which is zero!" << endl;
-	  }
-	  return(0);
-  }
 
 The pointer must be passed to the method by reference by using an ampersand so the copy 
 of the pointer created in the function findLastZero() will also move the arrow and value 
@@ -83,11 +83,11 @@ c.
   int main()
   {
 	  int* p;		                  //this creates a pointer without initializing
-	  int *p = new int;	          //must create space for a new pointer by using “new”
+	  int *p = new int;	          	  //must create space for a new pointer by using “new”
 	  biggest(15, 20, p);
 	  cout << "The biggest value is " << *p << endl;
-	  delete p;		                // In memory allocation, when we create memory on the heap
-	  return(0);		              //	we must also delete the memory after using it.
+	  delete p;		                  // In memory allocation, when we create memory on the heap
+	  return(0);		                  // we must also delete the memory after using it.
   }
   
 In the main() we make a pointer and use it without initializing, but we must initialize 
@@ -130,98 +130,101 @@ int main() {
 }
 
 While str1 and str2 both act as pointers inherently because they are arrays, pointers to cycle through the arrays must be initialized because otherwise the arrays will be compared in full and not character by character.  Neither str1 or str2 equal 0 when comparing the full array, so if the arrays equal, the program would try to increment str1 and str2 (character arrays), which can’t be done, and the program would be caught in an infinite loop since neither array would never equal 0.  The method can be fixed by changing all the str1 and str2 variables to the pointers str1p and str2p, and when the values at these pointers are trying to be accessed, prefix the variables with an *.The fixed method compares each character to each other and if they aren’t equal, the method returns false.  If all the characters are equal, we must test to see that they end at the same time.
+
   e.	
-int fibonacci(int n) {
-	int tmp;
-	int a = 1;
-	int b = 1;
+	int fibonacci(int n) {
+		int tmp;
+		int a = 1;
+		int b = 1;
 
-	for (int i = 0; i < n - 2; i++) {
-		tmp = a + b;
-		a = b;
-		b = tmp;
+		for (int i = 0; i < n - 2; i++) {
+			tmp = a + b;
+			a = b;
+			b = tmp;
+		}
+		return b;
 	}
-	return b;
-}
 
-int* computeFibonacciSequence(int& n) {
-	int arr[8];
-	n = 8;
-	for (int k = 0; k < n; k++) {
-		arr[k] = fibonacci(k);
+	int* computeFibonacciSequence(int& n) {
+		int arr[8];
+		n = 8;
+		for (int k = 0; k < n; k++) {
+			arr[k] = fibonacci(k);
+		}
+		return arr;
 	}
-	return arr;
-}
 
-int main()
-{
-	int m;
-	int* ptr = computeFibonacciSequence(m);
-	for (int i = 0; i < m; i++) {
-		cout << ptr[i] << ' ';
+	int main()
+	{
+		int m;
+		int* ptr = computeFibonacciSequence(m);
+		for (int i = 0; i < m; i++) {
+			cout << ptr[i] << ' ';
+		}
+		return(0);
 	}
-	return(0);
-}
+	
 The majority of the program is correct, but one hidden logic error in the program lies between the end of computeFibonacciSequence() and the outputs in the for loop in the main().  While computeFibonacciSequence(m) returns the correct address of the array created in the method and assigns it to int * ptr, the values assigned to the addresses change from the Fibonacci numbers 1 1 2 3 5 8 13 21 (when they are accessed in computeFibonacciSequence()) to random undefined values (when they are accessed in the main code).  Therefore, the program does not run correctly.
 
 
 
-2.	        Statement:			            Description:
-         1.	string* fp;				               F
-         2.	string fish[5];			             G
-         3.	fp = &fish[4];			             A
-         4.	*fp = “salmon”;			             B
-         5.	fp -= 3;				                 D
-         6.	*(fp + 3) = “salmon”;		         C
-         7.	fp[0] = “salmon”;			           B
-         8.	bool b = (fp == fish);		       E
-         9.	bool b = (*fp == *(fp + 1));	   H
+2.	      Statement:			   Description:
+         1.	string* fp;			        F
+         2.	string fish[5];				G
+         3.	fp = &fish[4];			        A
+         4.	*fp = “salmon”;			        B
+         5.	fp -= 3;		                D
+         6.	*(fp + 3) = “salmon”;		        C
+         7.	fp[0] = “salmon”;		        B
+         8.	bool b = (fp == fish);		        E
+         9.	bool b = (*fp == *(fp + 1));	   	H
 
 
 
 3.	
-int* minimart(int* a, int* b) {
-	if (*a < *b)
-		return a;
-	else
-		return b;
-}
 
-void swap1(int* a, int *b) {
-	int* temp = a;
-	a = b;
-	b = temp;
-}
+	int* minimart(int* a, int* b) {
+		if (*a < *b)
+			return a;
+		else
+			return b;
+	}
+	
+	void swap1(int* a, int *b) {
+		int* temp = a;
+		a = b;
+		b = temp;
+	}
+	
+	void swap2(int* a, int *b) {
+		int temp = *a;
+		*a = *b;
+		*b = temp;
+	}
 
-void swap2(int* a, int *b) {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
+	int main() {
+		int array[6] = { 5, 3, 4, 17, 22, 19 };
+	
+		int* ptr = minimart(array, &array[2]);
+		ptr[1] = 9;
+		ptr += 2;
+		*ptr = -1;
+		*(array + 1) = 79;
 
-int main() {
-	int array[6] = { 5, 3, 4, 17, 22, 19 };
+		cout << "diff=" << &array[5] - ptr << endl;
 
-	int* ptr = minimart(array, &array[2]);
-	ptr[1] = 9;
-	ptr += 2;
-	*ptr = -1;
-	*(array + 1) = 79;
-
-	cout << "diff=" << &array[5] - ptr << endl;
-
-	swap1(&array[0], &array[1]);
-	swap2(array, &array[2]);
-
-	for (int i = 0; i < 6; i++)
-		cout << array[i] << endl;
-
-	return(0);
-} 
+		swap1(&array[0], &array[1]);
+		swap2(array, &array[2]);
+	
+		for (int i = 0; i < 6; i++)
+			cout << array[i] << endl;
+	
+		return(0);
+	} 
 
 The output for the function above is as follows:
   diff=1
-	4
+  4
   79
   5
   9
@@ -246,20 +249,20 @@ element in the array, so that’s why the outputs are as so.
 4.	
 
   void deleteCapitals(char * c) {
-	                                                 //start temp and c at the same address
+	                                                 // start temp and c at the same address
 	  char * temp = c;
-	                                                 //run until end of the c string
+	                                                 // run until end of the c string
 	  do {
-	  	                                             //increment address of c until *c is lowercase
+	  	                                         // increment address of c until *c is lowercase
 		  while (*c > 64 && *c < 91) {
 		  	c++;
 		  }
-		  *temp = *c;                                  // Lowercase:
-		  temp++;                                      //	assign the lowercase character to where the 
-		  c++;                                         //	uppercase letter is and then increment both
-		                                               //	temp and c
+		  *temp = *c;                             // Lowercase:
+		  temp++;                                 //	assign the lowercase character to where the 
+		  c++;                                    //	uppercase letter is and then increment both
+		                                          //	temp and c
 	  } while (*c != '\0');
-	                                                 //set the next temp as the '\0' to end the c string
+	                                                  // set the next temp as the '\0' to end the c string
 	  *temp = '\0';
   }
   
@@ -267,5 +270,5 @@ element in the array, so that’s why the outputs are as so.
   {
 	  char msg[100] = "Happy Days Are Here Again!";
 	  deleteCapitals(msg);
-	  cout << msg << endl;                          // prints:   appy ays re ere gain!
+	  cout << msg << endl;                            // prints:   appy ays re ere gain!
   }
