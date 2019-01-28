@@ -130,7 +130,13 @@ p is used, we must delete the new int to recycle the memory on the heap.
 		}
 	}
 	
-While str1 and str2 both act as pointers inherently because they are arrays, pointers to cycle through the arrays must be initialized because otherwise the arrays will be compared in full and not character by character.  Neither str1 or str2 equal 0 when comparing the full array, so if the arrays equal, the program would try to increment str1 and str2 (character arrays), which can’t be done, and the program would be caught in an infinite loop since neither array would never equal 0.  The method can be fixed by changing all the str1 and str2 variables to the pointers str1p and str2p, and when the values at these pointers are trying to be accessed, prefix the variables with an *.The fixed method compares each character to each other and if they aren’t equal, the method returns false.  If all the characters are equal, we must test to see that they end at the same time.
+While str1 and str2 both act as pointers inherently because they are arrays, pointers to cycle through the arrays must be initialized 
+because otherwise the arrays will be compared in full and not character by character.  Neither str1 or str2 equal 0 when comparing the 
+full array, so if the arrays equal, the program would try to increment str1 and str2 (character arrays), which can’t be done, and the 
+program would be caught in an infinite loop since neither array would never equal 0.  The method can be fixed by changing all the str1 
+and str2 variables to the pointers str1p and str2p, and when the values at these pointers are trying to be accessed, prefix the 
+variables with an *.The fixed method compares each character to each other and if they aren’t equal, the method returns false.  If all 
+the characters are equal, we must test to see that they end at the same time.
 
   e.	
 	int fibonacci(int n) {
@@ -165,7 +171,11 @@ While str1 and str2 both act as pointers inherently because they are arrays, poi
 		return(0);
 	}
 	
-The majority of the program is correct, but one hidden logic error in the program lies between the end of computeFibonacciSequence() and the outputs in the for loop in the main().  While computeFibonacciSequence(m) returns the correct address of the array created in the method and assigns it to int * ptr, the values assigned to the addresses change from the Fibonacci numbers 1 1 2 3 5 8 13 21 (when they are accessed in computeFibonacciSequence()) to random undefined values (when they are accessed in the main code).  Therefore, the program does not run correctly.
+The majority of the program is correct, but one hidden logic error in the program lies between the end of computeFibonacciSequence() 
+and the outputs in the for loop in the main().  While computeFibonacciSequence(m) returns the correct address of the array created in 
+the method and assigns it to int * ptr, the values assigned to the addresses change from the Fibonacci numbers 1 1 2 3 5 8 13 21 (when 
+they are accessed in computeFibonacciSequence()) to random undefined values (when they are accessed in the main code).  Therefore, the 
+program does not run correctly.
 
 
 
