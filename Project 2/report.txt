@@ -6,9 +6,9 @@ TESTS
 
 Base Cases
 
--	Test all the combinations of gender, age, height, and weight to ensure every outcome comes out correctly; we test these 
+- Test all the combinations of gender, age, height, and weight to ensure every outcome comes out correctly; we test these 
   because the assignment specifically tells us to write a program having these outputs.
--	Test an empty donor name, incorrect gender names, negative age, height, and weight; we test these cases because the assignment 
+- Test an empty donor name, incorrect gender names, negative age, height, and weight; we test these cases because the assignment 
   specifically tells us to catch these errors.
   
 Test Boundaries
@@ -17,9 +17,9 @@ Test Boundaries
   inequality in your code to make sure you didn’t make a mistake.
 - Test 25-year-old donors weighing 109, 110, and 111 pounds to test the weight boundary inequality in your code to make sure you 
   didn’t make a mistake.
--	For Women, test heights 4’9”, 4’10”, 4’11”, and 5’ with age between 16 and 22 years old and above 110 pounds to test the 
+- For Women, test heights 4’9”, 4’10”, 4’11”, and 5’ with age between 16 and 22 years old and above 110 pounds to test the 
   height inequalities in your code to make sure you didn’t make a mistake.
--	For every gender besides Female, test donors between 16 and 22 years old above 110 pounds with heights 4’11”, 5’, and 5’1” 
+- For every gender besides Female, test donors between 16 and 22 years old above 110 pounds with heights 4’11”, 5’, and 5’1” 
   to test the height inequalities in your code to make sure you didn’t make a mistake.
   
 Irregular Cases
