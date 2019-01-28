@@ -1,10 +1,7 @@
 //Project 5
 //
 //Adam Cole
-//004912373
-//Discussion 1E
-//
-//main.cpp
+
 
 //includes
 #include "AppleProduct.h"
