@@ -100,35 +100,36 @@ p is used, we must delete the new int to recycle the memory on the heap.
 
 
   d.	
-// return true if two C strings are equal 
-bool match(const char str1[], const char str2[]) {
-	bool result = true;
-	const char * str1p = str1;//must turn the array of characters into actual pointers
-	const char * str2p = str2;//  must be const because they come from const char[]’s
-	while (*str1p != 0 && *str2p != 0) {  // zero bytes at ends 	
-//must access the value pointed to by the pointer (in the while and the if)
-		if (*str1p != *str2p) {  // compare corresponding characters
-			result = false;
-			break;
+	// return true if two C strings are equal 
+	bool match(const char str1[], const char str2[]) {
+		bool result = true;
+		const char * str1p = str1;			// must turn the array of characters into actual pointers
+		const char * str2p = str2;			//  must be const because they come from const char[]’s
+		while (*str1p != 0 && *str2p != 0) {  		// zero bytes at ends 	
+								// must access the value pointed to by the pointer (in the 
+								//  while and the if)
+			if (*str1p != *str2p) {  		// compare corresponding characters
+				result = false;
+				break;
+			}
+			str1p++;    				// advance to the next character
+			str2p++;    				// must advance by moving the arrow down the array of characters
 		}
-		str1p++;    // advance to the next character
-		str2p++;    //must advance by moving the arrow down the array of characters
+		if (result) {
+			result = (*str1p == *str2p);    	// both ended at same time?
+		}
+		return(result);
 	}
-	if (result) {
-		result = (*str1p == *str2p);    // both ended at same time?
+	
+	int main() {
+		char a[10] = "pointy";
+		char b[10] = "pointless";
+	
+		if (match(a, b)) {
+			cout << "They're the same!" << endl;
+		}
 	}
-	return(result);
-}
-
-int main() {
-	char a[10] = "pointy";
-	char b[10] = "pointless";
-
-	if (match(a, b)) {
-		cout << "They're the same!" << endl;
-	}
-}
-
+	
 While str1 and str2 both act as pointers inherently because they are arrays, pointers to cycle through the arrays must be initialized because otherwise the arrays will be compared in full and not character by character.  Neither str1 or str2 equal 0 when comparing the full array, so if the arrays equal, the program would try to increment str1 and str2 (character arrays), which can’t be done, and the program would be caught in an infinite loop since neither array would never equal 0.  The method can be fixed by changing all the str1 and str2 variables to the pointers str1p and str2p, and when the values at these pointers are trying to be accessed, prefix the variables with an *.The fixed method compares each character to each other and if they aren’t equal, the method returns false.  If all the characters are equal, we must test to see that they end at the same time.
 
   e.	
